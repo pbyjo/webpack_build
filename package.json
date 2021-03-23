@@ -1,0 +1,18 @@
+{
+  "name": "webpack_dev",
+  "version": "1.0.0",
+  "description": "Veremos todas las funcionalidades de webapack y sus plugins para trabajar con diferentes tipos de archivos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "byjo | byjo.developer@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12"
+  }
+}
