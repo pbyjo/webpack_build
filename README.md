@@ -126,5 +126,40 @@ luego ejecutamos en la consola
 creamos un script de build en json
 `"build" : "webpack --mode production"`
 
+### M3 - Loaders y Plugins en Webpack
 
+#### Babel loader para Javascript
 
+ >Clase 6
+
+Babel te permite hacer que tu código JavaScript sea compatible con todos los navegadores
+
+**!Debes agregar a tu proyecto las siguientes dependencias**
+
+`npm install babel-loader @babel/core @babel/preset-env @babel/plugin-transform-runtime -D`
+
+`babel-loader` nos permite usar babel con webpack
+`@babel/core` es babel en general
+`@babel/preset-env` trae y te permite usar las ultimas características de JavaScript
+`@babel/plugin-transform-runtime` te permite trabajar con todo el tema de asincronismo como ser async y await
+
+Debes crear el archivo de configuración de babel el cual tiene como nombre `.babelrc`
+
+Para comenzar a utilizar webpack debemos agregar la siguiente configuración en `webpack.config.js`
+
+``` js 
+    module : { 
+        rules : [
+            {
+                test : /\.m?js$/,
+                exclude : /node_modules/,
+                use : {
+                    loader: 'babel-loader'
+                }
+            }
+        ]},
+```
+
+finalmente npm run build
+
+RESUMEN: Babel te ayuda a transpilar el código JavaScript, a un resultado el cual todos los navegadores lo puedan entender y ejecutar. Trae “extensiones” o plugins las cuales nos permiten tener características más allá del JavaScript común
