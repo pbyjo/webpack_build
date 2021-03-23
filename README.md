@@ -113,6 +113,18 @@ La diferencia radica que el modo development deja el código mas legible para lo
 
 clonamos `https://github.com/gndx/js-portfolio` donde tenemos ya los archivos preparados para trabajar con el proyecto e instalamos webpack dentro de este.
 
+#### Configuración de webpack.config.js
+
+ >Clase 5
+
+configuramos nuestro archivo 
+`webpack.config.js` 
+
+luego ejecutamos en la consola
+`npx webpack --mode production --config webpack.config.js`
+
+creamos un script de build en json
+`"build" : "webpack --mode production"`
 
 
 
