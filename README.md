@@ -92,7 +92,7 @@ Dispone de loader y plugins permitiéndonos preparar particularidades de nuestro
 La carpeta SRC es el source de todo el proyecto ( index.js , imágenes, utils, assets, helpers, database, etc).
 
 Instalar webpack
-`npm i webpack@v webpack-cli@v -D`
+`npm i webpack@v webpack-cli@v -D` <!-- Con el indicativo -D estipulamos que es una dependencia de desarrollo -->
 
 Ejecutar webpack
 `npx webpack`
@@ -106,5 +106,13 @@ Por defecto webpack al compilar nuestro proyecto setea el modo “production” 
 `npx webpack --mode development`
 
 La diferencia radica que el modo development deja el código mas legible para los desarrolladores pero con comentarios, el modo production deja el código comprimido y mas limpio para usarse.
+
+#### Instalación de webpack y construcción del proyecto
+
+ >Clase 4
+
+clonamos `https://github.com/gndx/js-portfolio` donde tenemos ya los archivos preparados para trabajar con el proyecto e instalamos webpack dentro de este.
+
+
 
 
