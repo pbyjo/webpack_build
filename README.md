@@ -218,3 +218,30 @@ Destacar que antes de transpilar eliminamos el script directo que lleva el html 
 
 listo
 `npm run build`
+
+#### Loaders para CSS y preprocesadores de CSS
+
+ >Clase 8
+
+para CSS
+`npm install mini-css-extract-plugin css-loader -D`
+
+**css-loader** ⇒ Loader para reconocer CSS
+**mini-css-extract-plugin** ⇒ Extrae el CSS en archivos
+
+para SASS
+`npm install node-sass sass-loader -D`
+
+``` js
+    {
+        test: /\.s?css$/,
+        use: [MiniCssExtractPlugin.loader,
+            "css-loader",
+            "sass-loader"]
+    }
+```
+
+para STYLUS
+`npm install stylus stylus-loader -D`
+
+luego agregamos la config de este en webpack.config e importamos archivo styl en index.js
