@@ -269,3 +269,28 @@ webpack.config.js
 
 importante en Template.js cambiar las rutas finales de los assets.
 
+#### Loaders de imágenes
+
+ >Clase 10
+
+Este loader nos permite importar de forma dinámica en nuestros archivos JavaScript imágenes, el loader le genera un hash unico para cada imagen. Algo parecido sucede con ReactJS al importar imágenes
+
+**Configuración**
+Al final de las rules:
+
+``` js 
+    {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource'
+    }
+```
+
+Si quieren que las imagenes generadas se guarden en la carpeta images/ pueden agregar la opcion dentro de rules.
+
+``` js
+        generator: {
+            filename: 'static/images/[hash][ext][query]'
+        }
+```
+
+importamos en template cada una de las imágenes, transpilamos y nos genera un hash por cada una.
