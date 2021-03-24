@@ -245,3 +245,27 @@ para STYLUS
 `npm install stylus stylus-loader -D`
 
 luego agregamos la config de este en webpack.config e importamos archivo styl en index.js
+
+#### Copia de archivos con webpack
+
+ >Clase 9
+
+`npm install copy-webpack-plugin -D`
+
+webpack.config.js
+
+``` js 
+    const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+    new CopyWebpackPlugin({
+            patterns : [
+                {
+                    from: path.resolve(__dirname, 'src', 'assets/images'),
+                    to: 'assets/images'
+                }
+            ]
+        })
+```
+
+importante en Template.js cambiar las rutas finales de los assets.
+
