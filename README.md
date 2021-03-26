@@ -383,3 +383,29 @@ Webpack nos comunica que actualmente terser-webpack-plugin viene incluido desde 
 Es decir que no podemos usar la propiedad minimizer: []. Pero si deseáramos personalizar la optimización y agregar plugins como ser css-minimizer-webpack-plugin ahi toca instalar y usar terser-webpack-plugin dentro de optimizations, otro caso de este tipo sería si desearas personalizar el plugin de terser
 
 Una de las cosas mas importantes por la cual utilizamos webpack es la optimización de nuestro proyecto, en comprimir nuestro css, nuestro javascript y optimizar nuestras imagenes, entre otras caracteristicas.
+
+#### Webpack Alias
+
+ >Clase 13
+
+Alias ⇒ nos permiten otorgar nombres paths específicos evitando los paths largos
+
+Para crear un alias debes agregar la siguiente configuración a webpack
+
+``` js
+    module.exports = {
+        ...
+        resolve: {
+            ...
+                alias: {
+                    '@nombreDeAlias': path.resolve(__dirname, 'src/<directorio>'),
+                },
+        }
+    }
+```
+
+Puedes usarlo en los imports de la siguiente manera.
+
+`import modulo from "@ejemplo/archivo.js";`
+
+
