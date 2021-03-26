@@ -336,3 +336,50 @@ Creamos una configuración para las fuentes en webpack config dentro de rules:
 ```
 
 Transpilamos.
+
+#### Optimización: hashes, compresión y minificación de archivos
+
+ >Clase 12
+
+`npm install css-minimizer-webpack-plugin terser-webpack-plugin -D`
+
+config: 
+
+``` js
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+
+    optimization : {
+        minimize : true,
+        minimizer: [
+            new CssMinimizerPlugin(),
+            new TerserPlugin(),
+        ]
+    }
+
+    /* cambiamos algunas configs para generar un hash en los archivos qeu queremos, es opcional y lo podemos hacer con diferentes archivos que queramos optimizar en el cache */
+    filename : '[name].[contenthash].js',
+    name: "[name].[contenthash].[ext]",
+    new MiniCssExtractPlugin({
+        //Le anadimos una configuracion al plugin que nos permite compilar en css
+        filename : 'assets/[name].[contenthash].css'
+    }),
+```
+
+Transpilamos.
+/////////////////
+
+Webpack nos comunica que actualmente terser-webpack-plugin viene incluido desde webpack 5
+
+``` js
+    module.exports = {
+        ...
+        optimization: {
+            minimize:true
+        }
+    }
+```
+
+Es decir que no podemos usar la propiedad minimizer: []. Pero si deseáramos personalizar la optimización y agregar plugins como ser css-minimizer-webpack-plugin ahi toca instalar y usar terser-webpack-plugin dentro de optimizations, otro caso de este tipo sería si desearas personalizar el plugin de terser
+
+Una de las cosas mas importantes por la cual utilizamos webpack es la optimización de nuestro proyecto, en comprimir nuestro css, nuestro javascript y optimizar nuestras imagenes, entre otras caracteristicas.
