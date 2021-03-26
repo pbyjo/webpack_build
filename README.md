@@ -294,3 +294,45 @@ Si quieren que las imagenes generadas se guarden en la carpeta images/ pueden ag
 ```
 
 importamos en template cada una de las imágenes, transpilamos y nos genera un hash por cada una.
+
+#### Loaders de fuentes 
+
+ >Clase 11
+
+Configuramos en nuestro CSS el consumo de fuentes de forma local
+
+``` css 
+    @font-face {
+        font-family: 'Ubuntu';
+        src: url('../assets/fonts/ubuntu-regular.woff2') format('woff2'),
+            url('../assets/fonts/ubuntu-regular.woff') format('woff');
+        
+        font-weight: 400;
+        font-style: normal;
+    }
+```
+
+Luego instalamos `npm install url-loader file-loader -D` nos ayuda a leer archivos y tambien moverlos.
+
+
+Creamos una configuración para las fuentes en webpack config dentro de rules:
+
+``` js 
+    ...
+    {
+        test : /\.(woff|woff2)$/,
+        use : {
+            loader: 'url-loader',
+            options : {
+                limit: 10000,
+                mimetype: 'application/font-woff',
+                name: "[name].[ext]",
+                outputPath: './assets/fonts/',
+                publicPath: './assets/fonts/',
+                esModule : false,
+            }
+        }
+    }
+```
+
+Transpilamos.
