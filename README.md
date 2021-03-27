@@ -502,3 +502,18 @@ Primero creamos un archivo en la raíz llamado netlify.toml con la siguiente con
         command = "npm run build"
 ```
 
+es importante no tener dist en gitignore
+
+Luego pusheamos al repo remoto en github
+
+Para no pushear .env necesitamos crear un script para estas variables de entornos en nuestro deploy del build de la app que estamos creando
+
+creamos una carpeta en la raíz que se llamara scripts y creamos `create-env.js`
+
+--- . ---
+
+Luego vamos a los deploy settings en netlify y en enviroments agregamos la variable API con su valor.
+
+agregamos al script build `"build": "node ./scripts/create-env.js && webpack --mode production --config webpack.config.js",`
+
+Pusheamos de nuevo a nuestro repositorio.
