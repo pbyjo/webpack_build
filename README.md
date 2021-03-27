@@ -442,4 +442,40 @@ const API = process.env.API; // consumido desde .env
 
  >Clase 15
 
+En este modo creamos un nuevo archivo de config webpack donde especificamos solo lo que necesitamos para este modo
+
+no necesitamos optimizacion, terser ni css minimizer y estipulamos el modo
+
+``` js 
+    module.exports = {
+        mode: 'development';
+    }
+```
+
+por ultimo modificamos nuestro script en modo dev
+
+`"dev": "webpack --config webpack.config.dev.js",`
+
+#### Webpack en modo producción
+
+ >Clase 16
+
+`npm install clean-webpack-plugin -D`
+
+Este plugin nos permite limpiar nuestro directorio dist de todos los archivos que hemos generado durante el proyecto y que no necesitamos y darle un nuevo orden
+
+agregamos `const {CleanWebpackPlugin} = require('clean-webpack-plugin');`
+
+``` js
+    const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+
+    plugins : [
+        new CleanWebpackPlugin(),
+    ]
+```
+
+script `"build": "webpack --mode production --config webpack.config.js",`
+
+Transpilamos con el script y se eliminan los archivos sobrantes en este modo.
+
 
