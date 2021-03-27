@@ -478,4 +478,12 @@ script `"build": "webpack --mode production --config webpack.config.js",`
 
 Transpilamos con el script y se eliminan los archivos sobrantes en este modo.
 
+#### Webpack Watch
 
+ >Clase 17
+
+Existen dos formas de ejecutar watch.
+
+El primero es agregando un watch : true, en nuestro module.exports, o agregando el parametro directamente en el script del modo en el que queremos ver cambios en tiempo real.
+
+Es una mala practica agregar este parametro en modo produccion ya que demora mas en hacer los cambios al tener mas tareas que ejecutar y mostrarlos en tiempo real.
