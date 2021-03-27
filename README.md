@@ -519,3 +519,30 @@ agregamos al script build `"build": "node ./scripts/create-env.js && webpack --m
 Pusheamos de nuevo a nuestro repositorio.
 
 netlify detecta estos cambios automaticamente haciendo deploy en tiempo real y en el preview del proyecto deberia estar funcionando correctamente :)
+
+### M5 - Herramientas de desarrollo complementarias
+
+#### Webpack dev server
+
+ >Clase 19
+
+`npm install webpack-dev-server -D`
+
+Esto para crear un servidor de desarrollo de forma local (este server solo lo habilitamos en el modo dev
+
+agregamos configuración: 
+
+``` js 
+    devServer : {
+        contentBase: path.join(__dirname, 'dist'),
+        compress: true,
+        historyApiFallback : true,
+        port: 3006,
+    },
+```
+
+script:
+`"dev:server:start": "webpack serve --config webpack.config.dev.js"`
+
+nota: no necesitamos el modo watch en esta configuración, es decir, nuestro live-server con el modo watch viene a ser reemplazado por esta dependencia de desarrollo además de que nos da la ventaja de asignar el puerto en el que queremos ver nuestra app y en lo personal me gusta que no abra el servidor de forma automática sino yo mismo typearlo.
+

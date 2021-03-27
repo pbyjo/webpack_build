@@ -14,7 +14,7 @@ module.exports = {
         filename : '[name].[contenthash].js',
     },
     mode : 'development',
-    watch : true,
+    /* watch : true, */
     resolve: {
         extensions : ['.js', '.jsx'],
         alias : {
@@ -91,4 +91,10 @@ module.exports = {
         }) */
         new Dotenv(),
     ],
+    devServer : {
+        contentBase: path.join(__dirname, 'dist'),
+        compress: true,
+        historyApiFallback : true,
+        port: 3006,
+    },
 }
