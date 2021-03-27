@@ -546,3 +546,41 @@ script:
 
 nota: no necesitamos el modo watch en esta configuración, es decir, nuestro live-server con el modo watch viene a ser reemplazado por esta dependencia de desarrollo además de que nos da la ventaja de asignar el puerto en el que queremos ver nuestra app y en lo personal me gusta que no abra el servidor de forma automática sino yo mismo typearlo.
 
+#### Webpack bundle analyzer
+
+ >Clase 20
+
+Nos ayuda a entender como está constituido el proyecto y que elementos estan siendo grandes que puedan quitarle optimizacion
+
+Install
+`npm install webpack-bundle-analyzer -D`
+
+en plugins agregamos 
+``` js
+    const BundleAnalyzerPlugin = require('webpack-bundle-analyzer');
+
+    ...
+    new BundleAnalyzerPlugin(),
+```
+
+corremos el comando 
+`npx webpack --profile --json > stats.json`
+
+vemos las estadisticas con el siguiente comando creando un server
+`npx webpack-bundle-analyzer stats.json`
+
+#### Webpack DevTools
+
+ >Clase 21
+
+**source map** es un mapeo que se realiza entre el código original y el código transformado, tanto para archivos JavaScript como para archivos CSS. De esta forma podremos debuggear tranquilamente nuestro código.
+
+Con las devtools de webpack te permite crear un mapa de tu proyecto y con el podemos 
+
+    Leer a detalle
+    Analizar particularidades de lo que está compilando nuestro proyecto
+
+Para comenzar debemos ir a webpack.config.dev.js y agregar la propiedad `devtool: "source-map"`
+
+Esta opción genera un source map el cual posteriormente chrome lo lee y te permite depurar de una mejor forma
+
