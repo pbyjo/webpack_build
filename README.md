@@ -517,3 +517,5 @@ Luego vamos a los deploy settings en netlify y en enviroments agregamos la varia
 agregamos al script build `"build": "node ./scripts/create-env.js && webpack --mode production --config webpack.config.js",`
 
 Pusheamos de nuevo a nuestro repositorio.
+
+netlify detecta estos cambios automaticamente haciendo deploy en tiempo real y en el preview del proyecto deberia estar funcionando correctamente :)
