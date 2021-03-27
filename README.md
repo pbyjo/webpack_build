@@ -487,3 +487,18 @@ Existen dos formas de ejecutar watch.
 El primero es agregando un watch : true, en nuestro module.exports, o agregando el parametro directamente en el script del modo en el que queremos ver cambios en tiempo real.
 
 Es una mala practica agregar este parametro en modo produccion ya que demora mas en hacer los cambios al tener mas tareas que ejecutar y mostrarlos en tiempo real.
+
+#### Deploy a netlify
+
+ >Clase 18
+
+Enlazar el repo del proyecto a netlify
+
+Primero creamos un archivo en la raíz llamado netlify.toml con la siguiente config
+
+``` js
+    [build]
+        publish = "dist"
+        command = "npm run build"
+```
+
