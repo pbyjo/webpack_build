@@ -408,4 +408,38 @@ Puedes usarlo en los imports de la siguiente manera.
 
 `import modulo from "@ejemplo/archivo.js";`
 
+### M4 - Deploy del proyecto
+
+#### Variables de entorno
+
+ >Clase 14
+
+Instalamos dependencias
+
+`npm install dotenv-webpack -D`
+
+En la raíz de nuestro proyecto creamos .env y .env-example donde viviran las variables de entorno. en .env-example no se indica el valor de las variables utilizadas
+
+Este no se sube al repositorio por lo que se debe ignorar en gitignore
+
+agregamos a nuestra config en webpack
+
+``` js
+const Dotenv = require('dotenv-webpack');
+
+    //En plugins: 
+        new Dotenv(),
+
+```
+
+De esta forma y como ejemplo podemos proteger los datos asignados a una variable, en este caso:
+
+``` js
+const API = process.env.API; // consumido desde .env
+```
+
+#### Webpack en modo desarrollo
+
+ >Clase 15
+
 
